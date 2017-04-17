@@ -1,0 +1,33 @@
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+#content {
+	padding: 10px;
+}
+
+#loginCont {
+	width: 500px;
+}
+
+tr.selected {
+	background-color: #B0BED9 !important;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+.btn {
+	border-color: #191919;
+}
