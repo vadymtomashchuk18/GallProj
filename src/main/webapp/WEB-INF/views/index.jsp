@@ -1,6 +1,6 @@
 <%@include file="header2.jsp"%>
 
-<h2>Welcome to the Supermarket Database</h2>
+<h2>Welcome to the Gallery Database</h2>
 
 <br />
 <br />

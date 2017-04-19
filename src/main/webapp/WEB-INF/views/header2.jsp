@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
 
-<title>Supermarket</title>
+<title>Gallery</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -72,30 +72,30 @@
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#"> DATA <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<sec:authorize  access="hasAuthority('MANAGER')">
-									<li><a href="managerEmpl">Employee</a></li>
+								<sec:authorize  access="hasAuthority('ADMIN')">
+									<li><a href="managerEmpl">Exhibition</a></li>
 								</sec:authorize>
-								<sec:authorize access= "hasAuthority('MANAGER')">
-									<li><a href="managerAllProducers">Producer</a></li>
+								<sec:authorize access= "hasAuthority('ADMIN')">
+									<li><a href="managerAllProducers">Artist</a></li>
 								</sec:authorize>
 
 								<li><a href="allCards">Customer Card</a></li>
 
-								<sec:authorize access= "hasAuthority('MANAGER')">
+								<sec:authorize access= "hasAuthority('ADMIN')">
 									<li><a href="managerAllCats">Category</a></li>
 								</sec:authorize>
 
-								<li><a href="allProd">Product</a></li>
+								<li><a href="allProd">Picture</a></li>
 
-								<li><a href="strPr">Store product</a></li>
+								<li><a href="strPr">Store picture</a></li>
 
 								<li><a href="allChecks">Check</a></li>
 
-								<sec:authorize access= "hasAuthority('MANAGER')">
+								<sec:authorize access= "hasAuthority('ADMIN')">
 									<li><a href="managerAllCons">Consignment</a></li>
 								</sec:authorize>
 
-								<sec:authorize access= "hasAuthority('MANAGER')">
+								<sec:authorize access= "hasAuthority('ADMIN')">
 									<li><a href="managerAllContr">Return contract</a></li>
 								</sec:authorize>
 							</ul></li>
@@ -108,9 +108,9 @@
 
 						<sec:authorize access="isAuthenticated()">
 							<li><p class="navbar-text">Logged in as
-									<sec:authentication property="principal.surname" />
-									<sec:authentication property="principal.name" />
-									(<sec:authentication property="principal.job" />)</p></li>
+  									<sec:authentication property="principal.firstName" />
+									<sec:authentication property="principal.lastName" />
+									(<sec:authentication property="principal.role" />)</p></li>
 							<li><a href="logout"><span
 									class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 						</sec:authorize>
