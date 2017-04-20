@@ -2,6 +2,7 @@ package com.tomashchuk.GallProj.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -10,11 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.tomashchuk.GallProj.entities.Artist;
+import com.tomashchuk.GallProj.entities.Artist_Movement;
+import com.tomashchuk.GallProj.entities.Movement;
 
 @Repository("artistDao")
 public class ArtistDAOImpl implements ArtistDAO {
@@ -113,5 +117,27 @@ public class ArtistDAOImpl implements ArtistDAO {
 			return artist;
 		}
 	}
+
+	@Override
+	public List<Artist_Movement> getAllStylesForArtists() {
+		String sql = "SELECT artist.lastName, artist.firstName, movement.nameOfMovement "
+				+ "FROM artist_movement INNER JOIN artist ON artist_movement.artistId=artist.artistID "
+				+ "INNER JOIN movement ON artist_movement.movementCode=movement.movementCode;";
+		
+	 return jdbcTemplate.query(sql, mapper);
+	}
 	
+	private RowMapper<Artist_Movement> mapper = new RowMapper<Artist_Movement>(){
+
+		@Override
+		public Artist_Movement mapRow(ResultSet arg0, int arg1) throws SQLException {
+			Artist artist = new Artist();
+			Movement movement = new Movement();
+			artist.setFirstName(arg0.getString("firstName"));
+			artist.setLastName(arg0.getString("lastName"));
+			movement.setNameOfMovement(arg0.getString("nameOfMovement"));
+			return new Artist_Movement(artist, movement);
+		}
+		
+	};
 }

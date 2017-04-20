@@ -13,6 +13,10 @@ public class Artist {
     private Date dateOfDeath;
     private String otherDetails;
     
+    public Artist(){
+    	
+    }
+    
 	public Artist(int artistId, String lastName, String firstName, String birthCountry, Date birthday, Date dateOfDeath,
 			String otherDetails) {
 		super();

@@ -3,6 +3,7 @@ package com.tomashchuk.GallProj.service;
 import java.util.List;
 
 import com.tomashchuk.GallProj.entities.Artist;
+import com.tomashchuk.GallProj.entities.Artist_Movement;
 
 public interface ArtistService {
 
@@ -17,4 +18,7 @@ public interface ArtistService {
 	public void deleteArtist(int id);
 	
 	public List<Artist> getLastName(String lastName);
+	
+	public List<Artist_Movement> getAllStylesForArtists();
+
 }

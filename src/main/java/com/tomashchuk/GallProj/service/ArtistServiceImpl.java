@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tomashchuk.GallProj.dao.ArtistDAO;
 import com.tomashchuk.GallProj.entities.Artist;
+import com.tomashchuk.GallProj.entities.Artist_Movement;
 
 @Service("artistService")
 
@@ -49,6 +50,12 @@ public class ArtistServiceImpl implements ArtistService {
 	public List<Artist> getLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return artistDao.getLastName(lastName);
+	}
+
+	@Override
+	public List<Artist_Movement> getAllStylesForArtists() {
+		// TODO Auto-generated method stub
+		return artistDao.getAllStylesForArtists();
 	}
 
 }

@@ -6,6 +6,10 @@ public class Movement {
     private String nameOfMovement;
     private String description;
 
+    public Movement() {
+    	
+    }
+    
     public Movement(int movementCode, String nameOfMovement) {
         this.movementCode = movementCode;
         this.nameOfMovement = nameOfMovement;

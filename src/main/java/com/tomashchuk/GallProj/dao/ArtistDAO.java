@@ -3,6 +3,7 @@ package com.tomashchuk.GallProj.dao;
 import java.util.List;
 
 import com.tomashchuk.GallProj.entities.Artist;
+import com.tomashchuk.GallProj.entities.Artist_Movement;
 
 public interface ArtistDAO {
 	
@@ -17,4 +18,6 @@ public interface ArtistDAO {
 	public void deleteArtist(int id);
 	
 	public List<Artist> getLastName(String lastName);
+	
+	public List<Artist_Movement> getAllStylesForArtists();
 }

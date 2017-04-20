@@ -1,36 +1,41 @@
 package com.tomashchuk.GallProj.entities;
 
 public class Artist_Movement {
+	
+	private Artist artist;
+	private Movement movement;
+	
+	public Artist_Movement() {
+		
+	}
 
-    private int movementCode;
-    private int artistId;
+	public Artist_Movement(Artist artist, Movement movement) {
+		
+		this.artist = artist;
+		this.movement = movement;
+	}
 
-    public Artist_Movement(int movementCode, int artistId) {
-        this.movementCode = movementCode;
-        this.artistId = artistId;
-    }
+	public Artist getArtist() {
+		return artist;
+	}
 
-    public int getMovementCode() {
-        return movementCode;
-    }
+	public void setArtist(Artist artist) {
+		this.artist = artist;
+	}
 
-    public void setMovementCode(int movementCode) {
-        this.movementCode = movementCode;
-    }
+	public Movement getMovement() {
+		return movement;
+	}
 
-    public int getArtistId() {
-        return artistId;
-    }
+	public void setMovement(Movement movement) {
+		this.movement = movement;
+	}
 
-    public void setArtistId(int artistId) {
-        this.artistId = artistId;
-    }
-
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Artist_Movement{" +
-                "movementCode=" + movementCode +
-                ", artistId=" + artistId +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Artist_Movement [artist=" + artist + ", movement=" + movement + "]";
+	}
+	
+	
+	
 }
