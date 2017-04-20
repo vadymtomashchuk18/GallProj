@@ -1,49 +1,80 @@
 
 package com.tomashchuk.GallProj.entities;
 
+import java.util.Date;
+
 public class Artist {
 
 	private int artistId;
-	private int fullNameId;
-	private int biographyId;
-
-
-	public Artist(int artistId, int fullNameId, int biographyId) {
+    private String lastName;
+    private String firstName;
+    private String birthCountry;
+    private Date birthday;
+    private Date dateOfDeath;
+    private String otherDetails;
+    
+	public Artist(int artistId, String lastName, String firstName, String birthCountry, Date birthday, Date dateOfDeath,
+			String otherDetails) {
+		super();
 		this.artistId = artistId;
-		this.fullNameId = fullNameId;
-		this.biographyId = biographyId;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.birthCountry = birthCountry;
+		this.birthday = birthday;
+		this.dateOfDeath = dateOfDeath;
+		this.otherDetails = otherDetails;
 	}
-
+	
 	public int getArtistId() {
 		return artistId;
 	}
-
 	public void setArtistId(int artistId) {
 		this.artistId = artistId;
 	}
-
-	public int getFullNameId() {
-		return fullNameId;
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getBirthCountry() {
+		return birthCountry;
+	}
+	public void setBirthCountry(String birthCountry) {
+		this.birthCountry = birthCountry;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	public Date getDateOfDeath() {
+		return dateOfDeath;
+	}
+	public void setDateOfDeath(Date dateOfDeath) {
+		this.dateOfDeath = dateOfDeath;
+	}
+	public String getOtherDetails() {
+		return otherDetails;
+	}
+	public void setOtherDetails(String otherDetails) {
+		this.otherDetails = otherDetails;
 	}
 
-	public void setFullNameId(int fullNameId) {
-		this.fullNameId = fullNameId;
+	@Override
+	public String toString() {
+		return "Artist [artistId=" + artistId + ", lastName=" + lastName + ", firstName=" + firstName
+				+ ", birthCountry=" + birthCountry + ", birthday=" + birthday + ", dateOfDeath=" + dateOfDeath
+				+ ", otherDetails=" + otherDetails + "]";
 	}
-
-	public int getBiographyId() {
-		return biographyId;
-	}
-
-	public void setBiographyId(int biographyId) {
-		this.biographyId = biographyId;
-	}
-
-	@java.lang.Override
-	public java.lang.String toString() {
-		return "Artist{" +
-				"artistId=" + artistId +
-				", fullNameId=" + fullNameId +
-				", biographyId=" + biographyId +
-				'}';
-	}
+    
+	
+    
 }

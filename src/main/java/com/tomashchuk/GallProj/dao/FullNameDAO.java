@@ -17,4 +17,5 @@ public interface FullNameDAO {
 	public void deleteFullName(int id);
 	
 	public List<FullName> getLastName(String lastName);
+	
 }

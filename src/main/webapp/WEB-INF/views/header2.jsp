@@ -79,7 +79,7 @@
 									<li><a href="managerAllProducers">Artist</a></li>
 								</sec:authorize>
 
-								<li><a href="allCards">Customer Card</a></li>
+								<li><a href="allCards">Movement</a></li>
 
 								<sec:authorize access= "hasAuthority('ADMIN')">
 									<li><a href="managerAllCats">Category</a></li>
@@ -89,7 +89,7 @@
 
 								<li><a href="strPr">Store picture</a></li>
 
-								<li><a href="allChecks">Check</a></li>
+								<li><a href="allChecks">Bucklet</a></li>
 
 								<sec:authorize access= "hasAuthority('ADMIN')">
 									<li><a href="managerAllCons">Consignment</a></li>

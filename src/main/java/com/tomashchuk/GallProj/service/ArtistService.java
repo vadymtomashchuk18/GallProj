@@ -1,11 +1,11 @@
-package com.tomashchuk.GallProj.dao;
+package com.tomashchuk.GallProj.service;
 
 import java.util.List;
 
 import com.tomashchuk.GallProj.entities.Artist;
 
-public interface ArtistDAO {
-	
+public interface ArtistService {
+
 	public List<Artist> getAllArtists();
 	
 	public Artist getArtistId(int id);

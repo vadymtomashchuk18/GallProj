@@ -5,9 +5,9 @@
 <br />
 <br />
 
-
+<h4>
 	Authorization
-	</h2>
+	</h4>
 
 	<div class="container-fluid" id="loginCont">
 
