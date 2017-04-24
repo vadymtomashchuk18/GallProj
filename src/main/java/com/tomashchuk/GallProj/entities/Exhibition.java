@@ -1,19 +1,25 @@
 package com.tomashchuk.GallProj.entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Exhibition {
 
     private int exhibitionId;
-    private String exibitionName;
+    private String exhibitionName;
     private Date dateOpened;
     private Date dateClosed;
     private double priceOfVisiting;
     private String otherDetails;
 
-    public Exhibition(int exhibitionId, String exibitionName, Date dateOpened, Date dateClosed, String otherDetails) {
+    
+    
+    public Exhibition() {
+		
+	}
+
+	public Exhibition(int exhibitionId, String exibitionName, Date dateOpened, Date dateClosed, String otherDetails) {
         this.exhibitionId = exhibitionId;
-        this.exibitionName = exibitionName;
+        this.exhibitionName = exibitionName;
         this.dateOpened = dateOpened;
         this.dateClosed = dateClosed;
         this.otherDetails = otherDetails;
@@ -27,12 +33,12 @@ public class Exhibition {
         this.exhibitionId = exhibitionId;
     }
 
-    public String getExibitionName() {
-        return exibitionName;
+    public String getExhibitionName() {
+        return exhibitionName;
     }
 
-    public void setExibitionName(String exibitionName) {
-        this.exibitionName = exibitionName;
+    public void setExhibitionName(String exibitionName) {
+        this.exhibitionName = exibitionName;
     }
 
     public Date getDateOpened() {
@@ -71,7 +77,7 @@ public class Exhibition {
     public java.lang.String toString() {
         return "Exhibition{" +
                 "exhibitionId=" + exhibitionId +
-                ", exibitionName='" + exibitionName + '\'' +
+                ", exibitionName='" + exhibitionName + '\'' +
                 ", dateOpened=" + dateOpened +
                 ", dateClosed=" + dateClosed +
                 ", priceOfVisiting=" + priceOfVisiting +

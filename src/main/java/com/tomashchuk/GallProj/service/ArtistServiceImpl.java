@@ -10,7 +10,6 @@ import com.tomashchuk.GallProj.entities.Artist;
 import com.tomashchuk.GallProj.entities.Artist_Movement;
 
 @Service("artistService")
-
 public class ArtistServiceImpl implements ArtistService {
 
 	@Autowired
@@ -56,6 +55,24 @@ public class ArtistServiceImpl implements ArtistService {
 	public List<Artist_Movement> getAllStylesForArtists() {
 		// TODO Auto-generated method stub
 		return artistDao.getAllStylesForArtists();
+	}
+
+	@Override
+	public void saveUpdateArtist(Artist artist) {
+		// TODO Auto-generated method stub
+		if (artist.getArtistId() > 0) {
+			// update
+			artistDao.updateArtist(artist);
+		} else {
+			// insert
+			artistDao.addArtist(artist);
+		}
+	}
+
+	@Override
+	public List<Artist_Movement> getDirectsForArtist() {
+		// TODO Auto-generated method stub
+		return artistDao.getDirectsForArtist();
 	}
 
 }

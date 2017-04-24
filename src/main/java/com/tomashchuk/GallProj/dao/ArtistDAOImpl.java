@@ -1,6 +1,7 @@
 package com.tomashchuk.GallProj.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -53,18 +54,19 @@ public class ArtistDAOImpl implements ArtistDAO {
 	@Override
 	public void addArtist(Artist artist) {
 		String query = "INSERT INTO Artist (lastName, firstName, birthCountry, birthday, dateOfDeath, otherDetails)"
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?)";	
+				+ "VALUES(?, ?, ?, ?, ?, ?)";	
 		
 		KeyHolder keyHolder2 = new GeneratedKeyHolder();
 		int out = jdbcTemplate.update(new PreparedStatementCreator() {
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(query.toString(), Statement.RETURN_GENERATED_KEYS);
 				ps.setString(1, artist.getLastName());
-				ps.setString(1, artist.getFirstName());
-				ps.setString(1, artist.getBirthCountry());
-				ps.setDate(2, ((java.sql.Date) artist.getBirthday()));
-				ps.setDate(3, ((java.sql.Date) artist.getDateOfDeath()));
-				ps.setString(4, artist.getOtherDetails());
+				ps.setString(2, artist.getFirstName());
+				ps.setString(3, artist.getBirthCountry());
+				ps.setDate(4, (Date) artist.getBirthday());
+				//ps.setDate(4, new Date(100000));
+				ps.setDate(5, ((java.sql.Date) artist.getDateOfDeath()));
+				ps.setString(6, artist.getOtherDetails());
 				
 				return ps;
 			}
@@ -127,6 +129,17 @@ public class ArtistDAOImpl implements ArtistDAO {
 	 return jdbcTemplate.query(sql, mapper);
 	}
 	
+	@Override
+	public List<Artist_Movement> getDirectsForArtist() {
+		String sql = "SELECT artist.artistID, artist.lastName, artist.firstName, artist.birthCountry, artist.birthday,"
+				+ "artist.dateOfDeath, artist.otherDetails, movement.nameOfMovement "
+				+ "FROM artist INNER JOIN artist_movement ON artist.artistID=artist_movement.artistId "
+				+ "INNER JOIN movement ON artist_movement.movementCode=movement.movementCode;";
+//				+ "WHERE artist.artistID=?;";
+		return jdbcTemplate.query(sql,  mapper2);
+	}
+	
+	
 	private RowMapper<Artist_Movement> mapper = new RowMapper<Artist_Movement>(){
 
 		@Override
@@ -140,4 +153,25 @@ public class ArtistDAOImpl implements ArtistDAO {
 		}
 		
 	};
+	
+	private RowMapper<Artist_Movement> mapper2 = new RowMapper<Artist_Movement>(){
+
+		@Override
+		public Artist_Movement mapRow(ResultSet arg0, int arg1) throws SQLException {
+			Artist artist = new Artist();
+			Movement movement = new Movement();
+			artist.setArtistId(arg0.getInt("artistID"));
+			artist.setLastName(arg0.getString("lastName"));
+			artist.setFirstName(arg0.getString("firstName"));
+			artist.setBirthCountry(arg0.getString("birthCountry"));
+			artist.setBirthday(arg0.getDate("birthday"));
+			artist.setDateOfDeath(arg0.getDate("dateOfDeath"));
+			artist.setOtherDetails(arg0.getString("otherDetails"));
+			movement.setNameOfMovement(arg0.getString("nameOfMovement"));
+			return new Artist_Movement(artist, movement);
+		}
+		
+	};
+
+
 }

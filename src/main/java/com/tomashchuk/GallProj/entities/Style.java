@@ -6,7 +6,10 @@ public class Style {
     private String nameOfStyle;
     private String styleDescription;
 
-    public Style(int styleId, String nameOfStyle, String styleDescription) {
+    public Style() {	
+	}
+
+	public Style(int styleId, String nameOfStyle, String styleDescription) {
         this.styleId = styleId;
         this.nameOfStyle = nameOfStyle;
         this.styleDescription = styleDescription;

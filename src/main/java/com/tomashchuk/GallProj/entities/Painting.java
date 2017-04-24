@@ -1,102 +1,105 @@
 package com.tomashchuk.GallProj.entities;
 
+
+
 public class Painting {
 
     private int paintingId;
-    private int artistId;
-    private int styleId;
+    private Artist artist;
+    private Style style;
     private String nameOfPainting;
     private double priceOfPicture;
     private double widthSize;
     private double heightSize;
     private String otherDetails;
 
-    public Painting(int paintingId, int artistId, int styleId, String nameOfPainting, double priceOfPicture, double widthSize, double heightSize, String otherDetails) {
-        this.paintingId = paintingId;
-        this.artistId = artistId;
-        this.styleId = styleId;
-        this.nameOfPainting = nameOfPainting;
-        this.priceOfPicture = priceOfPicture;
-        this.widthSize = widthSize;
-        this.heightSize = heightSize;
-        this.otherDetails = otherDetails;
-    }
+    public Painting() {
+	}
+    
+	public Painting(int paintingId, Artist artist, Style style, String nameOfPainting, double priceOfPicture,
+			double widthSize, double heightSize, String otherDetails) {
+		super();
+		this.paintingId = paintingId;
+		this.artist = artist;
+		this.style = style;
+		this.nameOfPainting = nameOfPainting;
+		this.priceOfPicture = priceOfPicture;
+		this.widthSize = widthSize;
+		this.heightSize = heightSize;
+		this.otherDetails = otherDetails;
+	}
 
-    public int getPaintingId() {
-        return paintingId;
-    }
 
-    public void setPaintingId(int paintingId) {
-        this.paintingId = paintingId;
-    }
 
-    public int getArtistId() {
-        return artistId;
-    }
+	public int getPaintingId() {
+		return paintingId;
+	}
 
-    public void setArtistId(int artistId) {
-        this.artistId = artistId;
-    }
+	public void setPaintingId(int paintingId) {
+		this.paintingId = paintingId;
+	}
 
-    public int getStyleId() {
-        return styleId;
-    }
+	public Artist getArtist() {
+		return artist;
+	}
 
-    public void setStyleId(int styleId) {
-        this.styleId = styleId;
-    }
+	public void setArtist(Artist artist) {
+		this.artist = artist;
+	}
 
-    public String getNameOfPainting() {
-        return nameOfPainting;
-    }
+	public Style getStyle() {
+		return style;
+	}
 
-    public void setNameOfPainting(String nameOfPainting) {
-        this.nameOfPainting = nameOfPainting;
-    }
+	public void setStyle(Style style) {
+		this.style = style;
+	}
 
-    public double getPriceOfPicture() {
-        return priceOfPicture;
-    }
+	public String getNameOfPainting() {
+		return nameOfPainting;
+	}
 
-    public void setPriceOfPicture(double priceOfPicture) {
-        this.priceOfPicture = priceOfPicture;
-    }
+	public void setNameOfPainting(String nameOfPainting) {
+		this.nameOfPainting = nameOfPainting;
+	}
 
-    public double getWidthSize() {
-        return widthSize;
-    }
+	public double getPriceOfPicture() {
+		return priceOfPicture;
+	}
 
-    public void setWidthSize(double widthSize) {
-        this.widthSize = widthSize;
-    }
+	public void setPriceOfPicture(double priceOfPicture) {
+		this.priceOfPicture = priceOfPicture;
+	}
 
-    public double getHeightSize() {
-        return heightSize;
-    }
+	public double getWidthSize() {
+		return widthSize;
+	}
 
-    public void setHeightSize(double heightSize) {
-        this.heightSize = heightSize;
-    }
+	public void setWidthSize(double widthSize) {
+		this.widthSize = widthSize;
+	}
 
-    public String getOtherDetails() {
-        return otherDetails;
-    }
+	public double getHeightSize() {
+		return heightSize;
+	}
 
-    public void setOtherDetails(String otherDetails) {
-        this.otherDetails = otherDetails;
-    }
+	public void setHeightSize(double heightSize) {
+		this.heightSize = heightSize;
+	}
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Painting{" +
-                "paintingId=" + paintingId +
-                ", artistId=" + artistId +
-                ", styleId=" + styleId +
-                ", nameOfPainting='" + nameOfPainting + '\'' +
-                ", priceOfPicture=" + priceOfPicture +
-                ", widthSize=" + widthSize +
-                ", heightSize=" + heightSize +
-                ", otherDetails='" + otherDetails + '\'' +
-                '}';
-    }
+	public String getOtherDetails() {
+		return otherDetails;
+	}
+
+	public void setOtherDetails(String otherDetails) {
+		this.otherDetails = otherDetails;
+	}
+
+	@Override
+	public String toString() {
+		return "Painting [paintingId=" + paintingId + ", artist=" + artist + ", style=" + style + ", nameOfPainting="
+				+ nameOfPainting + ", priceOfPicture=" + priceOfPicture + ", widthSize=" + widthSize + ", heightSize="
+				+ heightSize + ", otherDetails=" + otherDetails + "]";
+	}
+    
 }

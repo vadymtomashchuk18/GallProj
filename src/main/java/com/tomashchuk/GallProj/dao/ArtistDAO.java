@@ -20,4 +20,6 @@ public interface ArtistDAO {
 	public List<Artist> getLastName(String lastName);
 	
 	public List<Artist_Movement> getAllStylesForArtists();
+	
+	public List<Artist_Movement> getDirectsForArtist();
 }

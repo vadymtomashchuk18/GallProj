@@ -21,4 +21,7 @@ public interface ArtistService {
 	
 	public List<Artist_Movement> getAllStylesForArtists();
 
+	public void saveUpdateArtist(Artist artist);
+	
+	public List<Artist_Movement> getDirectsForArtist();
 }

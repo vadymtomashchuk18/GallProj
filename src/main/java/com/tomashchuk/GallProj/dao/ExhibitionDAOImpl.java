@@ -56,7 +56,7 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		int out = jdbcTemplate.update(new PreparedStatementCreator() {
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(query.toString(), Statement.RETURN_GENERATED_KEYS);
-				ps.setString(1, exhb.getExibitionName());
+				ps.setString(1, exhb.getExhibitionName());
 				ps.setDate(2, ((java.sql.Date) exhb.getDateOpened()));
 				ps.setDate(3, ((java.sql.Date) exhb.getDateClosed()));
 				ps.setDouble(4, exhb.getPriceOfVisiting());
@@ -80,7 +80,7 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 	public void updateExhb(Exhibition exhb) {
 		String query = "UPDATE Exhibition SET exhibitionName=?, dateOpened=?, dateClosed=?, priceOfVisiting=?, otherDetails=?, WHERE exhibitionId=?";
 		
-		Object[] args = new Object[] {exhb.getExibitionName(), exhb.getDateOpened(), exhb.getDateClosed(), 
+		Object[] args = new Object[] {exhb.getExhibitionName(), exhb.getDateOpened(), exhb.getDateClosed(), 
 				exhb.getPriceOfVisiting(), exhb.getOtherDetails(), exhb.getExhibitionId()};
 		
 		int out = jdbcTemplate.update(query, args);

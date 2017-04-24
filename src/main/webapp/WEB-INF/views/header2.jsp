@@ -72,31 +72,23 @@
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#"> DATA <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<sec:authorize  access="hasAuthority('ADMIN')">
-									<li><a href="managerEmpl">Exhibition</a></li>
-								</sec:authorize>
+								
+								<li><a href="allExhibitions">Exhibition</a></li>
+								
 								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="managerAllProducers">Artist</a></li>
-								</sec:authorize>
-
-								<li><a href="allCards">Movement</a></li>
-
-								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="managerAllCats">Category</a></li>
+									<li><a href="adminAllMovements">Movement</a></li>
 								</sec:authorize>
 
-								<li><a href="allProd">Picture</a></li>
+								<li><a href="allArtists">Artist</a></li>
 
-								<li><a href="strPr">Store picture</a></li>
-
-								<li><a href="allChecks">Bucklet</a></li>
+								<li><a href="allPaintings">Picture</a></li>
 
 								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="managerAllCons">Consignment</a></li>
+									<li><a href="adminAllStyles">Style</a></li>
 								</sec:authorize>
 
 								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="managerAllContr">Return contract</a></li>
+									<li><a href="adminAllUsers">User</a></li>
 								</sec:authorize>
 							</ul></li>
 							</sec:authorize>

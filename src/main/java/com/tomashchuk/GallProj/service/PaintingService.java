@@ -1,13 +1,11 @@
-package com.tomashchuk.GallProj.dao;
+package com.tomashchuk.GallProj.service;
 
-import java.sql.Date;
 import java.util.List;
 
 import com.tomashchuk.GallProj.entities.Painting;
 
-
-
-public interface PaintingDAO {
+public interface PaintingService {
+	
 	public List<Painting> getAllPaintings();
 
 	public Painting getByPaintingId(int id);
@@ -19,4 +17,5 @@ public interface PaintingDAO {
 	public void editPainting(Painting painting);
 
 	public List<Painting> getByPaintingName(String nameOfPainting);
+	
 }
