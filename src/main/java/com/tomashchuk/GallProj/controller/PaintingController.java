@@ -99,7 +99,7 @@ public class PaintingController {
 		return new ModelAndView("redirect:/allPaintings");
 	}
 	
-	@RequestMapping(value = "/searchPaintingsName", method = RequestMethod.POST)
+	@RequestMapping(value = "/searchPaintingName", method = RequestMethod.POST)
 	public String searchExhbName(@RequestParam String nameOfPainting, Model model, RedirectAttributes redirectAttributes) {
 		List<Painting> paintings = paintingService.getByPaintingName(nameOfPainting);
 

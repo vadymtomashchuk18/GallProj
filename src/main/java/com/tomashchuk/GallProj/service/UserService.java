@@ -14,4 +14,12 @@ public interface UserService {
 	public User getUserAuth(String login, String password);
 
 	public User getUserLogin(String login);
+	
+	public List<User> getUsersByLogin(String login);
+	
+	public void addUser(final User empl);
+
+	public void updateUser(User empl);
+
+	public void deleteUser(int id);
 }

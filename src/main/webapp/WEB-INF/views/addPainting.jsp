@@ -14,8 +14,8 @@
 			<form:hidden path="paintingId" />
 			
 			<div class="form-group ">
-				<label for="artist" class="control-label">Artist</label> </br><select
-					id="artistId" name="artistId">
+				<label for="artist" class="control-label">Artist</label> </br>
+				<select	id="artistID" name="artistID">
 					<option value="${painting.artist.artistId}">${painting.artist.lastName}</option>
 					<c:forEach items="${artists}" var="artist">
 						<option value="<c:out value="${artist.artistId}"/>">
@@ -27,7 +27,7 @@
  
   			<div class="form-group ">
 				<label for="style" class="control-label">Style</label> </br><select
-					id="styleId" name="styleId">
+					id="stlId" name="stlId">
 					<option value="${painting.style.styleId}">${painting.style.nameOfStyle}</option>
 					<c:forEach items="${styles}" var="style">
 						<option value="<c:out value="${style.styleId}"/>">

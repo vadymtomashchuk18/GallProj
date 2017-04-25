@@ -44,4 +44,28 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserLogin(login);
 	}
 
+	@Override
+	public List<User> getUsersByLogin(String login) {
+		// TODO Auto-generated method stub
+		return userDao.getUsersByLogin(login);
+	}
+
+	@Override
+	public void addUser(User empl) {
+		// TODO Auto-generated method stub
+		userDao.addUser(empl);
+	}
+
+	@Override
+	public void updateUser(User empl) {
+		// TODO Auto-generated method stub
+		userDao.updateUser(empl);
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		// TODO Auto-generated method stub
+		userDao.deleteUser(id);
+	}
+
 }

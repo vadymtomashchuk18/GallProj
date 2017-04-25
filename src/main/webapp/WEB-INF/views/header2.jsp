@@ -88,7 +88,7 @@
 								</sec:authorize>
 
 								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="adminAllUsers">User</a></li>
+									<li><a href="adminUsers">User</a></li>
 								</sec:authorize>
 							</ul></li>
 							</sec:authorize>
