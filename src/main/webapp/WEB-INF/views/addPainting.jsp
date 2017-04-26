@@ -13,10 +13,17 @@
 
 			<form:hidden path="paintingId" />
 			
+			
 			<div class="form-group ">
 				<label for="artist" class="control-label">Artist</label> </br>
 				<select	id="artistID" name="artistID">
+<!-- 					<option value="NONE"> --SELECT--<option>
 					<option value="${painting.artist.artistId}">${painting.artist.lastName}</option>
+ -->					<option value="NONE" label="--SELECT--"/>
+					<option value="Aivazovsky" label="Aivazovsky"/>
+					<option value="Picasso" label="Picasso"/>
+					<option value="Monet" label="Monet"/>
+					<option value="Van Gogh" label="Van Gogh"/>
 					<c:forEach items="${artists}" var="artist">
 						<option value="<c:out value="${artist.artistId}"/>">
 							<c:out value="${artist.lastName}" />
@@ -26,9 +33,18 @@
  			</div>
  
   			<div class="form-group ">
-				<label for="style" class="control-label">Style</label> </br><select
-					id="stlId" name="stlId">
-					<option value="${painting.style.styleId}">${painting.style.nameOfStyle}</option>
+				<label for="style" class="control-label">Style</label> 
+				</br>
+				<select id="styleId" name="styleId">
+<!-- 				<option value="NONE" style="center"> --SELECT--<option> 
+					<option value="NONE" label="--SELECT--"/>		-->
+					<option value="Romanticism" label="Romantisism"/>
+					<option value="Analytic cubism" label="Analytic cubism"/>
+					<option value="Crystal cubism" label="Crystal cubism"/>
+					<option value="Impressionism" label="Impressionism"/>
+					<option value="Post-Impressionism" label="Post-Impressionism"/>
+<!-- 					<option value="${painting.style.styleId}"><c:out value="${painting.style.nameOfStyle}" /><option>
+	 -->				
 					<c:forEach items="${styles}" var="style">
 						<option value="<c:out value="${style.styleId}"/>">
 							<c:out value="${style.nameOfStyle}" />

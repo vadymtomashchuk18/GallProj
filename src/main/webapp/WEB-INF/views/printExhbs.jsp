@@ -83,6 +83,36 @@
 	</div>
 
 </div>
+<!-- 
+<script>
+	$(document).ready(function() {
+		var booksTable = $('#exhbsTable').DataTable({
+			columns : [ {
+				data : 'exhibitionId'
+			}, {
+				data : 'status'
+			}, {
+				data : 'exhibitionName'
+			}, {
+				data : 'dateOpened'
+			}, {
+				data : 'dateClosed'
+			}, {
+				data : 'priceOfVisiting'
+			}, {
+				data : 'otherDetails'
+			}, ],
+			columnDefs : [ {
+				targets : 0,
+				visible : false
+			} ],
+			rowId : 'exhibitionId',
+			order : [ [ 1, 'asc' ] ],
+			lengthChange : false
+		});
+	});
+</script>
+ -->
 </br>
 <button type="button" class="btn btn-default " onclick="PrintElem('#print')">Print</button>
 

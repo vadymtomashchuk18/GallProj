@@ -128,44 +128,44 @@ public class ExhibitionController {
 	
 	
 	
-	
-	// handling errors
-			@ExceptionHandler(DataIntegrityViolationException.class)
-			public RedirectView handleMyException(DataIntegrityViolationException ex, HttpServletRequest request,
-					HttpServletResponse response) throws IOException {
-				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
-
-				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
-				if (outputFlashMap != null) {
-					outputFlashMap.put("msg", "Sorry, this action is not permitted!");
-				}
-				return rw;
-			}
-
-			@ExceptionHandler({ SQLException.class, DataAccessException.class })
-			public RedirectView databaseError(SQLException ex, DataAccessException ex2, HttpServletRequest request,
-					HttpServletResponse response) throws IOException {
-				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
-
-				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
-				if (outputFlashMap != null) {
-					outputFlashMap.put("msg", "Sorry, an database error has occured!");
-				}
-				return rw;
-			}
-
-			// Total control - setup a model and return the view name yourself. Or
-			// consider subclassing ExceptionHandlerExceptionResolver (see below).
-			@ExceptionHandler(Exception.class)
-			public RedirectView handleError(Exception ex, HttpServletRequest request, HttpServletResponse response)
-					throws IOException {
-				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
-
-				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
-				if (outputFlashMap != null) {
-					outputFlashMap.put("msg", "Sorry, an error has occured!");
-				}
-				return rw;
-			}
+//	
+//	// handling errors
+//			@ExceptionHandler(DataIntegrityViolationException.class)
+//			public RedirectView handleMyException(DataIntegrityViolationException ex, HttpServletRequest request,
+//					HttpServletResponse response) throws IOException {
+//				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
+//
+//				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
+//				if (outputFlashMap != null) {
+//					outputFlashMap.put("msg", "Sorry, this action is not permitted!");
+//				}
+//				return rw;
+//			}
+//
+//			@ExceptionHandler({ SQLException.class, DataAccessException.class })
+//			public RedirectView databaseError(SQLException ex, DataAccessException ex2, HttpServletRequest request,
+//					HttpServletResponse response) throws IOException {
+//				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
+//
+//				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
+//				if (outputFlashMap != null) {
+//					outputFlashMap.put("msg", "Sorry, an database error has occured!");
+//				}
+//				return rw;
+//			}
+//
+//			// Total control - setup a model and return the view name yourself. Or
+//			// consider subclassing ExceptionHandlerExceptionResolver (see below).
+//			@ExceptionHandler(Exception.class)
+//			public RedirectView handleError(Exception ex, HttpServletRequest request, HttpServletResponse response)
+//					throws IOException {
+//				RedirectView rw = new RedirectView("http://localhost:8080/GallProj/allExhibitions");
+//
+//				FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
+//				if (outputFlashMap != null) {
+//					outputFlashMap.put("msg", "Sorry, an error has occured!");
+//				}
+//				return rw;
+//			}
 
 }

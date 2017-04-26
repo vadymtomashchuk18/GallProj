@@ -23,7 +23,7 @@
 					data-target="#searchCat">Search by category name</button>	
 
   -->
-				<button type="button" class="btn btn-default " onclick="location.href='printExhbs';">Report</button>
+				<button type="button" class="btn btn-default " onclick="location.href='printExhb';">Report</button>
 			</div>
 		</div>
 

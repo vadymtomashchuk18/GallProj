@@ -76,7 +76,7 @@
 								<li><a href="allExhibitions">Exhibition</a></li>
 								
 								<sec:authorize access= "hasAuthority('ADMIN')">
-									<li><a href="adminAllMovements">Movement</a></li>
+									<li><a href="allMovements">Movement</a></li>
 								</sec:authorize>
 
 								<li><a href="allArtists">Artist</a></li>
